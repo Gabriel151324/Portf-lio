@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Aguiar | Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/img/icons8-portfolio-50.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src="./img/Gabriel.jpg" alt="foto de Gabriel Fidelis" class="foto-perfil">
+            <h1>Gabriel Fidelis</h1>
+            <p class="cabecalho-sub-titulo">Desenvolvedor Fullstack</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Desenvolvedor fullstack apaixonado por tecnologia, com habilidades em JavaScript, Python, Vue.js,
+                React.js e bancos de dados como PostgreSQL e MySQL. Busco sempre entregar soluções inovadoras e de alta
+                qualidade, com foco em user experience e performance. Estou sempre aprendendo e buscando novos desafios
+                para expandir minhas habilidades e contribuir para projetos impactantes.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Moonlight Sign-Up</h3>
+                    <p class="paragrafo-projetos">Uma interface de cadastro futurista e envolvente, inspirada em
+                        paisagens
+                        surreais e efeitos de luz neon. O design combina um formulário moderno com um fundo artístico,
+                        proporcionando uma experiência imersiva para o usuário.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Banking UI – Caixa Eletrônico</h3>
+                    <p class="paragrafo-projetos">Interface simulada de um caixa eletrônico digital, projetada para
+                        exibir
+                        saldo e realizar transações bancárias básicas. O design realista transmite credibilidade,
+                        utilizando
+                        elementos visuais institucionais e botões intuitivos.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Explore Nature – Card UI</h3>
+                    <p class="paragrafo-projetos">Uma interface minimalista de cards interativos para explorar paisagens
+                        naturais. Com um design elegante e moderno, o projeto destaca imagens imersivas e uma tipografia
+                        sofisticada, ideal para aplicativos de turismo e blogs de viagens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input id="nome" placeholder="Nome" class="campo-form">
+            </div>
+
+            <div class="grupo-form">
+                <textarea id="mensagem" placeholder="Digite sua Mensagem" class="campo-form" rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Mensagem</button>
+        </form>
+
+        <script>
+            function enviarWhats(event) {
+                event.preventDefault()
+
+                const nome = document.getElementById('nome').value;
+                const mensagem = document.getElementById('mensagem').value;
+                const telefone = '5585988100380'
+
+                const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+                const msgFormatada = encodeURIComponent(texto)
+
+                const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+                console.log(url)
+
+                window.open(url, '_blank')
+            }
+        </script>
+    </section>
+
+</body>
+
+</html>
